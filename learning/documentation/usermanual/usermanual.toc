@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}What is \textsf {Learning-Tool} ?}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}About this manual}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Features of the current version}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Getting and Installing \textsf {Learning-Tool} }{3}{subsection.1.4}
+\contentsline {section}{\numberline {2}An Introductory example}{4}{section.2}
+\contentsline {subsubsection}{\numberline {2.0.1}Precise definition of the classification task}{4}{subsubsection.2.0.1}
+\contentsline {subsection}{\numberline {2.1}Algorithm for offline training of the threshold gate}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Basic Concepts}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Implementation with \textsf {Learning-Tool} }{6}{subsection.2.3}
+\contentsline {section}{\numberline {3}Function reference}{8}{section.3}

@@ -1,0 +1,19 @@
+\objfield{READWRITE}{Cm}{0}{1}{F}{The membrane capacity $C_m$}
+\objfield{READWRITE}{Rm}{0}{1e30}{Ohm}{The membrane resistance $R_m$}
+\objfield{READWRITE}{Vthresh}{-10}{100}{V}{If $V_m$ exceeds $V_{thresh}$ a spike is emmited.}
+\objfield{READWRITE}{Vresting}{-1}{1}{V}{The resting membrane voltage.}
+\objfield{READWRITE}{Vreset}{-1}{1}{V}{The voltage to reset $V_m$ to after a spike.}
+\objfield{READWRITE}{Vinit}{-1}{1}{V}{The initial condition for $V_m$ at time $t=0$.}
+\objfield{READWRITE}{Trefract}{0}{1}{sec}{The length of the absolute refractory period.}
+\objfield{READWRITE}{Inoise}{0}{1}{A}{The standard deviation of the noise to be added each integration time constant.}
+\objfield{READWRITE}{Iinject}{-1}{1}{A}{A constant current to be injected into the LIF neuron.}
+\objfieldnu{READWRITE}{h}{-1e30}{1e30}{}{internal parameter h - deinactivation of Ca-channels}
+\objfieldnu{READWRITE}{tau\_p}{-1e30}{1e30}{}{tau\_p time constant for recovery from inactivation}
+\objfieldnu{READWRITE}{tau\_m}{-1e30}{1e30}{}{tau\_m time constant for inactivation}
+\objfieldnu{READWRITE}{Vh}{-1e30}{1e30}{}{Vh constant for onset of Ca-channel activation.}
+\objfieldnu{READWRITE}{gh}{-1e30}{1e30}{}{gh constant for relative impact of Ca-current to leak current (0.5-2)}
+\objfieldnu{READWRITE}{type}{-1e30}{1e30}{}{Type (e.g. inhibitory or excitatory) of the neuron}
+\objfield{READONLY}{Vm}{-1e30}{1e30}{V}{The membrane voltage $V_m$}
+\objfieldnu{READONLY}{Isyn}{-1e30}{1e30}{}{synaptic input current}
+\objfieldnu{READONLY}{nIncoming}{-1e30}{1e30}{}{Number of incoming synapses}
+\objfieldnu{READONLY}{nOutgoing}{-1e30}{1e30}{}{Number of outgoing synapses}

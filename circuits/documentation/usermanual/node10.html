@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Making synaptic connections</TITLE>
+<META NAME="description" CONTENT="Making synaptic connections">
+<META NAME="keywords" CONTENT="usermanual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="usermanual.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node7.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_top_navigation">
+<tr valign=middle class="csim_top_navigation">
+<td valign=middle align=left  class="csim_top_navigation"><i><b>&nbsp;Circuit-Tool User Manual</b></i></td><td valign=middle align=right class="csim_top_navigation">&nbsp;
+<A NAME="tex2html163"
+  HREF="node9.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A>&nbsp;
+<A NAME="tex2html171"
+  HREF="node1.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="contents" SRC="contents.gif"></A>&nbsp;
+<A NAME="tex2html173"
+  HREF="node11.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></dt></tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links--><br>
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html175"
+  HREF="node10.html#SECTION00033100000000000000">Connecting the input</A>
+<LI><A NAME="tex2html176"
+  HREF="node10.html#SECTION00033200000000000000">Making recurrent connections</A>
+<LI><A NAME="tex2html177"
+  HREF="node10.html#SECTION00033300000000000000">Connecting pools</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION00033000000000000000"></A><A NAME="sec:conn"></A>
+
+Making synaptic connections
+</H2>
+
+<P>
+Now we want to set up synaptic connections between the neurons in the
+individual pools. This is done by commands of the form
+<PRE>
+&gt;&gt; [nmc,c_idx] = add(nmc,'conn','dest',&lt;destination&gt;,'src',&lt;source&gt;,...);
+</PRE>
+where <code>&lt;destination&gt;</code> and <code>&lt;source&gt;</code> specify a set of
+neurons either by the handle/index of a pool or by specifying a
+volume.
+
+<P>
+
+<H3><A NAME="SECTION00033100000000000000"></A><A NAME="sec:conn_input"></A>
+
+Connecting the input
+</H3>
+
+<P>
+To see how it works lets start by connecting the spiking
+inputs to the pool of LifNeurons:
+<PRE>
+&gt;&gt; [nmc,c(1)]=add(nmc,'conn','dest',p_lif,'src',p_sin,...
+                      'Cscale',1,'Wscale',5);
+</PRE>
+Here we used the pool handles/indices as source and destination
+specification. The additional parameters given specify how to scale
+the overall connection probability (<TT>Cscale</TT>) and the synaptic
+strength (<TT>Wscale</TT>). To see the actual connectivity pattern
+generated you can again use the command <TT>plot(nmc);</TT> and
+interaktively explore the network structure. By clicking on a neuron
+you can look at presynaptic as well as postsynaptic
+connections. <A HREF="#in_conn">Figure</A>&nbsp;<A HREF="#in_conn"><IMG  ALIGN="absmiddle" BORDER="1" ALT="[*]" SRC="crossref.gif"></A> shows how the input neurons are
+connected at the moment.
+
+<DIV ALIGN="CENTER"><A NAME="fig:in_conn"></A><A NAME="525"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
+Synaptic connections of the spiking input
+  neurons to the LifNeuron pool.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+</DIV>
+<P>
+<DIV ALIGN="CENTER"><IMG
+ WIDTH="666" HEIGHT="413" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="\includegraphics{in_conn}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+As the next step we connect the spiking input via
+<A HREF="#StaticSpikingSynapses">static synapses</A> (default are
+<A HREF="#DynamicSpikingSynapses">dynamic synapses</A> to some subset of
+the pool of sigmoidal neurons by specifying a certain volume
+<PRE>
+&gt;&gt; [nmc,c(2)]=add(nmc,'conn','dest',[6 1 1; 6 3 6],'src',p_sin,...
+                      'type','StaticSpikingSynapse','Cscale',Inf);
+</PRE>
+The synaptic connection created by this command are shown in
+<A HREF="#in_sig">Figure</A>&nbsp;<A HREF="#in_sig"><IMG  ALIGN="absmiddle" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>. Note that the setting <TT>'Cscale',Inf</TT> ensures
+that there will be a synaptic connection between each pair of neurons
+in the source region and the destination region.
+
+<DIV ALIGN="CENTER"><A NAME="fig:in_sig"></A><A NAME="545"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+Synaptic connections of the spiking input
+  neurons to the SigmoidalNeuron pool.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+</DIV>
+<P>
+<DIV ALIGN="CENTER"><IMG
+ WIDTH="694" HEIGHT="375" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="\includegraphics{in_sig}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+And finaly we connect the analog input to the pool of HHNeurons by
+means of a StaticAnalogSynapse. This is necessary since
+StaticSpikingSynapses can not transmit analog signals.
+<PRE>
+&gt;&gt; [nmc,c(3)]=add(nmc,'conn','dest',p_hh,'src',p_ain,...
+                      'type','StaticAnalogSynapse','Wscale',0.2);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION00033200000000000000"></A><A NAME="sec:conn_rec"></A>
+
+Making recurrent connections
+</H3>
+
+<P>
+Now we want to create recurrent connections with the pools themselves.
+The only differene to the previous section is that now the source and
+destination is the same pool:
+
+<P>
+<PRE>
+&gt;&gt; [nmc,c(4)]=add(nmc,'conn','dest',p_lif,'src',p_lif,...
+                      'SH_W',0.5,'lambda',2.5,'Wscale',2);
+
+&gt;&gt; [nmc,c(5)]=add(nmc,'conn','dest',p_sig,'src',p_sig,...
+                      'SH_W',0.5,'lambda',2,'type','StaticAnalogSynapse');
+
+&gt;&gt; [nmc,c(7)]=add(nmc,'conn','dest',p_hh,'src',p_hh,...
+               'SH_W',0.5,'lambda',1);
+</PRE>
+
+<P>
+Again one can specify in addition to the destination and the source
+other parameters which determine how individual synaptic connections
+are created. For example the parameter <TT>lambda</TT> determines the
+``average distance'' of synaptic connections and <TT>SH_W</TT> determines
+the standard deviation <SPAN CLASS="MATH"><I>SD</I></SPAN> of the Gamma distribution used to generate
+the synaptic weights: <!-- MATH
+ $SD = \mathtt{SH\_W} \cdot \mathrm{mean}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="124" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$SD = \mathtt{SH\_W} \cdot \mathrm{mean}$"></SPAN>.
+<A HREF="#lif_incoming">Figure</A>&nbsp;<A HREF="#lif_incoming"><IMG  ALIGN="absmiddle" BORDER="1" ALT="[*]" SRC="crossref.gif"></A> shows a typical postsynaptic connectivity
+pattern for one neuron generated by the code above.
+
+<DIV ALIGN="CENTER"><A NAME="fig:lif_incoming"></A><A NAME="559"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5:</STRONG>
+Postsynaptic connections of a typical
+  excitatory LifNeuron.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+</DIV>
+<P>
+<DIV ALIGN="CENTER"><IMG
+ WIDTH="658" HEIGHT="457" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="\includegraphics{lif_incoming}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H3><A NAME="SECTION00033300000000000000"></A><A NAME="sec:conn_inter"></A>
+
+Connecting pools
+</H3>
+
+<P>
+In this example we connect the pool of HHneurons to the LifNeuron pool
+by static synapses.
+<PRE>
+&gt;&gt; [nmc,c(6)]=add(nmc,'conn','dest',p_hh,'src',p_lif,...
+                      'SH_W',0.5,'lambda',Inf,'type','StaticSpikingSynapse');
+</PRE>
+
+<P>
+Note that using <TT>lambda=Inf</TT> has the effect that the distance
+between the neurons dose not matter in determining wheter a synaptic
+connection will by generated or not.
+
+<P>
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_bot_navigation">
+<tr valign=middle class="csim_bot_navigation">
+<td valign=middle align=left width=1% class="csim_bot_navigation">
+<A NAME="tex2html163"
+  HREF="node9.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle align=left class="csim_bot_navigation">&nbsp;<A NAME="tex2html164"
+  HREF="node9.html">Creating the Pools</A></td>
+<td align=right valign=middle class="csim_bot_navigation"><A NAME="tex2html174"
+  HREF="node11.html">Simulating the model</A>&nbsp;
+<A NAME="tex2html173"
+  HREF="node11.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

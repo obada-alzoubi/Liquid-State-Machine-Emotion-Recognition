@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>An Introductory example</TITLE>
+<META NAME="description" CONTENT="An Introductory example">
+<META NAME="keywords" CONTENT="usermanual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="usermanual.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="usermanual.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_top_navigation">
+<tr valign=middle class="csim_top_navigation">
+<td valign=middle  align=left class="csim_top_navigation"><i><b>&nbsp;Learning-Tool User Manual</b></i></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html76"
+  HREF="node4.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html84"
+  HREF="node1.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="contents" SRC="contents.gif"></A></td>
+<td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html86"
+  HREF="node6.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00030000000000000000"></A><A NAME="sec:getstarted"></A>
+
+An Introductory example
+</H1>
+
+<P>
+In this section we will introduce <SPAN  CLASS="textsf">Learning-Tool</SPAN> by means of an introductory
+example. In this simple example we will train a readout neuron modeled
+as a threshold gate (see [<A
+ HREF="node10.html#HKP">Hertz et&nbsp;al., 1991</A>]) to classify a spike train. This
+readout neuron will receive its input from a neural microcircuit
+modeled as a network of leaky-integrate-and-fire neurons (see
+[<A
+ HREF="node10.html#GerstnerKistler:02">Gerstner and Kistler, 2002</A>]) which is stimulated by the input spike
+train (which should be classified). The setup is shown in
+<A HREF="#fig:example">Figure</A>&nbsp;<A HREF="#fig:example">1</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:example"></A><A NAME="530"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+Architecture used to classify a spike train. The microcircuit
+  is modeled as a network of leaky-integrate-and-fire neurons.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="425" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="\includegraphics{fig_example}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H3><A NAME="SECTION00030100000000000000">
+Precise definition of the classification task</A>
+</H3>
+
+<P>
+Two Poisson spike trains (freqency 20Hz, length 0.5sec) are
+generated, and fixed as templates 0 and 1. The actual input spike
+train is generated as jittered versions of a template by varying each
+spike by a random drawn amount (Gaussion distribuion with zero mean
+and a given STD; this STD is called jitter (default jitter=4ms)).
+The task of the threshold gate is to output the number (0 or 1) of the
+(random choosen) template from which the input spike train was
+generated.
+
+<P>
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_bot_navigation">
+<tr valign=middle class="csim_bot_navigation">
+<td valign=middle width=20 class="csim_bot_navigation">
+<A NAME="tex2html76"
+  HREF="node4.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle class="csim_bot_navigation"><A NAME="tex2html77"
+  HREF="node4.html">Getting and Installing Learning-Tool</A></td>
+<td class="csim_bot_navigation">&nbsp;</td>
+<td align=right valign=middle class="csim_bot_navigation"><A NAME="tex2html87"
+  HREF="node6.html">Algorithm for offline training of the</A></td><td  align=right width=20 valign=middle class="csim_bot_navigation">
+<A NAME="tex2html86"
+  HREF="node6.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

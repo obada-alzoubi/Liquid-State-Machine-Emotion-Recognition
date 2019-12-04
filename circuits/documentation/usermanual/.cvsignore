@@ -1,0 +1,15 @@
+*.bbl
+*.blg
+*.out
+*.pdf
+*.toc
+*.html
+*.png
+*.gif
+*.pl
+WARNING*
+*.aux
+*.dvi
+*.log
+*.old
+commonstuff.tex

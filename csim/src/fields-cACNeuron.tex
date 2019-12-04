@@ -1,0 +1,22 @@
+\objfield{READWRITE}{STempHeight}{0}{1}{Volt}{Height}
+\objfield{READWRITE}{Vthresh}{-10}{100}{V}{If $V_m$ exceeds $V_{thresh}$ a spike is emmited.}
+\objfield{READWRITE}{Vreset}{-1}{1}{V}{The voltage to reset $V_m$ to after a spike.}
+\objfield{READWRITE}{doReset}{0}{1}{flag}{Flag which determines wheter $V_m$ should be reseted after a spike}
+\objfield{READWRITE}{Trefract}{0}{1}{sec}{Length of the absolute refractory period.}
+\objfield{READWRITE}{nummethod}{0}{1}{flag}{Numerical method for the solution of the differential equation: Exp. Euler = 0, Crank-Nicolson = 1}
+\objfieldnu{READWRITE}{type}{-1e30}{1e30}{}{Type (e.g. inhibitory or excitatory) of the neuron}
+\objfield{READWRITE}{Cm}{0}{1}{F}{The membrane capacity $C_m$}
+\objfield{READWRITE}{Rm}{0}{1e30}{Ohm}{The membrane resistance $R_m$}
+\objfield{READONLY}{Em}{-1}{1}{V}{The reversal potential of the leakage channel}
+\objfield{READWRITE}{Vresting}{-1}{1}{V}{The resting membrane voltage.}
+\objfield{READWRITE}{Vinit}{-1}{1}{V}{Initial condition for$V_m$ at time $t=0$.}
+\objfield{READWRITE}{VmScale}{0}{1e5}{V}{Defines the difference between Vresting and the Vthresh for the calculation of the iongate tables and the ionbuffer Erev.}
+\objfield{READONLY}{Vm}{-1e30}{1e30}{V}{The membrane voltage}
+\objfield{READWRITE}{Inoise}{0}{1}{W^2}{Variance of the noise to be added each integration time constant.}
+\objfield{READWRITE}{Iinject}{-1}{1}{A}{Constant current to be injected into the CB neuron.}
+\objfieldnu{READONLY}{Isyn}{-1e30}{1e30}{}{synaptic input current}
+\objfieldnu{READONLY}{Gsyn}{-1e30}{1e30}{}{synaptic input conductance}
+\objfieldnu{READONLY}{nIncoming}{-1e30}{1e30}{}{Number of incoming synapses}
+\objfieldnu{READONLY}{nOutgoing}{-1e30}{1e30}{}{Number of outgoing synapses}
+\objfieldnu{READONLY}{nBuffers}{-1e30}{1e30}{}{Number of ion buffers}
+\objfieldnu{READONLY}{nChannels}{-1e30}{1e30}{}{Number of channels}

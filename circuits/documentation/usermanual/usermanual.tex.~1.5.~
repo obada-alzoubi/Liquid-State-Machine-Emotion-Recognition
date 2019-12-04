@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+
+\newcommand{\csim}{\textsf{CSIM} }
+\newcommand{\nmc}{\textsf{Circuit-Tool} }
+\newcommand{\lsm}{\textsf{Learning-Tool} }
+
+%
+% common packages
+%
+\usepackage{graphicx}
+\usepackage{color}
+
+\PassOptionsToPackage{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}{hyperref}
+
+\usepackage{html}
+
+%begin{latexonly}
+\usepackage{a4wide}
+\newif\ifpdf\ifx\pdfoutput\undefined\pdffalse\else\pdfoutput=1\pdftrue\fi
+\newcommand{\pdfgraphics}{\ifpdf\DeclareGraphicsExtensions{.pdf,.jpg}\else\DeclareGraphicsExtensions{.eps,.jpg}\fi}
+\ifpdf
+\else
+ \usepackage[dvips]{hyperref}
+\fi
+%end{latexonly}
+
+\html{
+  \pagecolor[gray]{1.0}
+  \newcommand{\pdfgraphics}{\DeclareGraphicsExtensions{.jpg,.eps}}
+  \newcommand{\href}[2]{\htmladdnormallink{#2}{#1}}
+  % we assume that the name of the hypertarget also exists as label!
+  \newcommand{\hyperlink}[2]{\hyperref{#2}{}{}{#1}} 
+  \newcommand{\hypertarget}[2]{#2}
+}
+
+\newcommand{\Section}[2]{\hypertarget{#2}{\section{#1}\label{#2}}}
+\newcommand{\Subsection}[2]{\hypertarget{#2}{\subsection{#1}\label{#2}}}
+\newcommand{\Subsubsection}[2]{\hypertarget{#2}{\subsubsection{#1}\label{#2}}}
+
+\newcommand{\secref}[2]{\hyperlink{#1}{#2}\latex{ (Sec.~\ref{#1})}}
+\newcommand{\sect}[1]{\hyperlink{#1}{Section}~\ref{#1}}
+\newcommand{\figref}[1]{\hyperlink{#1}{Figure}~\ref{fig:#1}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex plus 0.1ex minus 0.1ex}
+\setlength{\itemsep}{-0.5ex plus 0.1ex minus 0.1ex}
+\setlength{\topmargin}{0cm}
+
+\newcommand{\CenteredFigure}[4]{
+\hypertarget{fig:#1}{
+\begin{figure}
+\begin{center}
+\latex{\includegraphics[#3]{#1}}
+\html{\includegraphics[#4]{#1}}
+\end{center}
+\caption{#2}
+\label{fig:#1}
+\end{figure}
+}}
+ 
+\begin{document}
+\pdfgraphics
+\sloppy
+
+%
+% titlepage 
+%
+\latex{\input{um-tp-paper}}
+\html{\input{um-tp-html}}
+
+%
+% table of contents
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{prelim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{tutorial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{input_output}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{input_dist}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{distributed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{neural_microcircuit}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{delay_lines}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{small_circuits}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apalike}
+
+\bibliography{references}
+
+\end{document}

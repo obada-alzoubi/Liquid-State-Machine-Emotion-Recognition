@@ -1,0 +1,6 @@
+LSM updates 
+1 - fileparts functions - remove versn output. 
+2- In simulate function - Changed : 
+if ( ci > length(stimulus.channel) )
+to 
+if ( ci > length(stimulus(1).channel) )

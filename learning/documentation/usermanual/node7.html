@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Basic Concepts</TITLE>
+<META NAME="description" CONTENT="Basic Concepts">
+<META NAME="keywords" CONTENT="usermanual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="usermanual.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_top_navigation">
+<tr valign=middle class="csim_top_navigation">
+<td valign=middle  align=left class="csim_top_navigation"><i><b>&nbsp;Learning-Tool User Manual</b></i></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html100"
+  HREF="node6.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html108"
+  HREF="node1.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="contents" SRC="contents.gif"></A></td>
+<td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html110"
+  HREF="node8.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000"></A><A NAME="subsec:basic"></A>
+
+Basic Concepts
+</H2>
+
+<P>
+The above description of the <A HREF="node6.html#subsec:offline">basic algorithm</A>
+implicitly introduced all the basic concepts we need to know to
+understand how <SPAN  CLASS="textsf">Learning-Tool</SPAN> works:
+
+<P>
+<DL>
+<DT><STRONG>Input Distribution</STRONG></DT>
+<DD>The distribution from which the training
+  (and test) inputs are drawn. In our example the input distributio is
+  defined byt the following simple procedure (for fixed templates 0
+  and 1):
+  
+<OL>
+<LI>Randomly choose template 0 or 1
+</LI>
+<LI>Add noise (jitter) to each spike in the template
+  
+</LI>
+</OL>
+
+<P>
+</DD>
+<DT><STRONG>Neural Microcircuit</STRONG></DT>
+<DD>The circuit which receives the input and
+  whos response is recorded and analysed (in our example this
+  a network of 135 leaky-integrate-and-fire neurons).
+
+<P>
+</DD>
+<DT><STRONG>Response of the Microcircuit</STRONG></DT>
+<DD>The response (output) of the
+  neural microcircuit (in our example the 135 spike trains produced by
+  the microcircuit model).
+
+<P>
+</DD>
+<DT><STRONG>State of the Microcircuit</STRONG></DT>
+<DD>The transformed (smoothed) response
+  (output) of the neural microcircuit (in this examples this
+  corresponds to a low-pass filtered (30ms) version of the spike
+  trains). This transformation can also be dropped if one can cope
+  directly with the spike response.
+
+<P>
+</DD>
+<DT><STRONG>Sample Time Points</STRONG></DT>
+<DD>Since we can only handle finite sets of
+  training examples we must define time points at which we want to
+  sample the state of the microcircuit (in this example we will sample
+  the states every 25ms).
+
+<P>
+</DD>
+<DT><STRONG>Readout Function</STRONG></DT>
+<DD>A parameterized function/device which gets as
+  input the circuit states (or in some cases directly the circuit
+  response) an computes the outputs of the system (n this example a
+  threshold gate).
+
+<P>
+</DD>
+<DT><STRONG>Target Function/Filter</STRONG></DT>
+<DD>A function which defines for each input
+  time series the target output time series of a readout function. In
+  mathematical terms this should be a target filter since we are
+  talking about computations on time series.
+
+<P>
+</DD>
+<DT><STRONG>Supervised Learning Algorithm</STRONG></DT>
+<DD>By means of such algorithm the
+  paramters of the readout -- and only the readout -- are adjusted
+  such that the actual output of the readout matches as close as
+  possible the target output.
+
+<P>
+</DD>
+<DT><STRONG>Training Set</STRONG></DT>
+<DD>Set of inputs used to determine the parameter of
+  the readout.
+
+<P>
+</DD>
+<DT><STRONG>Test Set</STRONG></DT>
+<DD>Set of inputs different to the training set which is
+  used to asses the performance of the trained readout.
+
+<P>
+</DD>
+</DL>
+
+<P>
+As we will see each of this terms has its corresponding element within
+<SPAN  CLASS="textsf">Learning-Tool</SPAN> .
+
+<P>
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_bot_navigation">
+<tr valign=middle class="csim_bot_navigation">
+<td valign=middle width=20 class="csim_bot_navigation">
+<A NAME="tex2html100"
+  HREF="node6.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle class="csim_bot_navigation"><A NAME="tex2html101"
+  HREF="node6.html">Algorithm for offline training of the</A></td>
+<td class="csim_bot_navigation">&nbsp;</td>
+<td align=right valign=middle class="csim_bot_navigation"><A NAME="tex2html111"
+  HREF="node8.html">Implementation with Learning-Tool</A></td><td  align=right width=20 valign=middle class="csim_bot_navigation">
+<A NAME="tex2html110"
+  HREF="node8.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

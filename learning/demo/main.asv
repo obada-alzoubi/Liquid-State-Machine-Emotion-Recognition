@@ -1,0 +1,29 @@
+startup;
+VERBOSE_LEVEL = 0; % the higher the more is printed at stdout
+PLOTTING_LEVEL = 0; % the gigher the more plots will appear
+% define the input distribution
+Tmax = 60;
+nInputChannels= 32; % EEG Input
+
+% Build the LSM 
+% LSM architecture and connection configuration is located in make_liquid
+make_liquid_EEG
+
+% Load dataset
+%load('DEAPdataset.mat')
+
+% Generate the input that is suitable for LSM 
+[ S ] = initializeInput( Data, Tmax );
+
+%clear Data
+clear Data
+
+% Generate stimulus 
+[train_response,~] = collect_sr_data(nmc,S,32*40);
+
+
+% Get liquid states 
+train_states  = response2states(train_response, [], [0.5:0.4:Tmax]); 
+
+
+

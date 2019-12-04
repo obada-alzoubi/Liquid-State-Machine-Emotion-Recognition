@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\newcommand{\csim}{\textsf{CSIM} }
+\newcommand{\nmc}{\textsf{Circuit-Tool} }
+\newcommand{\lsm}{\textsf{Learning-Tool} }
+
+%
+% common packages
+%
+
+\PassOptionsToPackage{backref,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}{hyperref}
+
+\usepackage{graphics}
+\usepackage{html}
+
+%begin{latexonly}
+\usepackage{a4wide}
+\newif\ifpdf\ifx\pdfoutput\undefined\pdffalse\else\pdfoutput=1\pdftrue\fi
+\newcommand{\pdfgraphics}{\ifpdf\DeclareGraphicsExtensions{.pdf,.jpg}\else\DeclareGraphicsExtensions{.eps}\fi}
+\ifpdf
+\else
+ \usepackage[dvips]{hyperref}
+\fi
+%end{latexonly}
+
+\html{
+  \newcommand{\pdfgraphics}{}
+  \newcommand{\href}[2]{\htmladdnormallink{#2}{#1}}
+  % we assume that the name of the hypertarget also exists as label!
+  \newcommand{\hyperlink}[2]{\hyperref{#2}{}{}{#1}} 
+  \newcommand{\hypertarget}[2]{#2}
+}
+
+\newcommand{\Section}[2]{\hypertarget{#2}{\section{#1}\label{#2}}}
+\newcommand{\Subsection}[2]{\hypertarget{#2}{\subsection{#1}\label{#2}}}
+\newcommand{\Subsubsection}[2]{\hypertarget{#2}{\subsubsection{#1}\label{#2}}}
+
+\newcommand{\secref}[2]{\hyperlink{#1}{#2}\latex{ (Sec.~\ref{#1})}}
+\newcommand{\sect}[1]{\hyperlink{#1}{Section}~\ref{#1}}
+\newcommand{\figref}[1]{\hyperlink{#1}{Figure}~\ref{#1}}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex plus 0.1ex minus 0.1ex}
+
+%
+% unfortunately we need this to make latex2html work!
+%
+\begin{imagesonly}
+\usepackage[dvips]{color}
+\pagecolor[white]{1.0}
+\end{imagesonly}
+
+\begin{document}
+
+
+\pdfgraphics
+\sloppy
+%
+% titlepage 
+%
+\latex{\input{um-tp-paper}}
+\html{\input{um-tp-html}}
+
+%
+% table of contents
+%
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\clearpage
+
+\input{introduction.tex}
+
+\input{getstarted.tex}
+
+
+\section{Function reference}
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}
+
+
+
+
+

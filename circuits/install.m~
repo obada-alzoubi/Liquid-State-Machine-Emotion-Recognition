@@ -1,0 +1,29 @@
+function install
+
+addpath('..');
+
+%%
+%% @small_microcircuit/private/asamin.c
+%%
+condmex( 'asamin', '@small_microcircuit/private', 'mex -O asamin.c asa.c -DUSER_ACCEPTANCE_TEST#TRUE -DUSER_ASA_OUT#TRUE' );
+
+%%
+%% @balanced_fanin_circuit/private
+%%
+condmex( 'fanin_conn', '@balanced_fanin_circuit/private', 'mex -O fanin_conn.c randgen.c' );
+condmex( 'rand_conn', '@balanced_fanin_circuit/private', 'mex -O rand_conn.c randgen.c' );
+condmex( 'mirror_conn', '@balanced_fanin_circuit/private', 'mex -O mirror_conn.c randgen.c' );
+condmex( 'gradient_conn', '@balanced_fanin_circuit/private', 'mex -O gradient_conn.c randgen.c' );
+condmex( 'patch_conn', '@balanced_fanin_circuit/private', 'mex -O patch_conn.c randgen.c' );
+
+%%
+%% @pool_circuit_template\private
+%%
+condmex( 'asamin', '@pool_circuit_template\private', 'mex -O asamin.c asa.c -DUSER_ACCEPTANCE_TEST#TRUE -DUSER_ASA_OUT#TRUE' );
+
+%%
+%% compile conn.c
+%%
+condmex( 'conn', '@neural_microcircuit/private', 'mex -O conn.c randgen.c' );
+
+fprintf('Circuit-Tool *successfully* installed.\n\n');

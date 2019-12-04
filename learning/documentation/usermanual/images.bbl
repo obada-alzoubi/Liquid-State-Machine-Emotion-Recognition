@@ -1,0 +1,43 @@
+\begin{thebibliography}{}
+
+\bibitem[Gerstner and Kistler, 2002]{GerstnerKistler:02}
+Gerstner, W. and Kistler, W. (2002).
+\newblock {\em Spiking Neuron Models}.
+\newblock Cambridge University Press.
+\newblock See also \url{http://diwww.epfl.ch/~gerstner/BUCH.html}.
+
+\bibitem[Hertz et~al., 1991]{HKP}
+Hertz, J., Krogh, A., and Palmer, R.~G. (1991).
+\newblock {\em Introduction to the Theory of Neural Computation}.
+\newblock Addison-Wesley.
+
+\bibitem[Maass et~al., 2002]{MaassETAL:01a}
+Maass, W., Natschl\"ager, T., and Markram, H. (2002).
+\newblock Real-time computing without stable states: A new framework for neural
+  computation based on perturbations.
+\newblock {\em Neural Computation}, 14(11):2531--2560.
+
+\bibitem[Natschl\"{a}ger et~al., 2002a]{NatschlaegerETAL:02}
+Natschl\"{a}ger, T., Maass, W., and Markram, H. (2002a).
+\newblock The "liquid computer": A novel strategy for real-time computing on
+  time series.
+\newblock {\em Special Issue on Foundations of Information Processing of
+  {TELEMATIK}}, 8(1):39--43.
+
+\bibitem[Natschl\"{a}ger et~al., 2002b]{NatschlaegerETAL:02a}
+Natschl\"{a}ger, T., Markram, H., and Maass, W. (2002b).
+\newblock Computer models and analysis tools for neural microcircuits.
+\newblock In K\"otter, R., editor, {\em A Practical Guide to Neuroscience
+  Databases and Associated Tools}, chapter~9. Kluver Academic Publishers
+  (Boston).
+\newblock in press.
+
+\bibitem[Svahn, 2001]{PM}
+Svahn, E. (2001).
+\newblock Parallel matlab toolbox: User documentation.
+\newblock Master's thesis, Chalmers University of Technology, Sweden.
+\newblock To get a copy of the toolbox contact E. Svahn (email:
+  \url{ersva@igb.polymtl.ca}, \url{d96svahn@dtek.chalmers.se}) or get it via
+  \url{ftp://ftp-at.e-technik.uni-rostock.de/pub/pm/}.
+
+\end{thebibliography}

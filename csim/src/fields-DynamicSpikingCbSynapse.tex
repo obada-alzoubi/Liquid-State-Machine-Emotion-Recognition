@@ -1,0 +1,13 @@
+\objfieldnu{READWRITE}{E}{-1e30}{1e30}{}{Equilibrium potential given by the Nernst equation.}
+\objfieldnu{READWRITE}{U}{1e-5}{1}{}{The use parameter of the dynamic synapse}
+\objfield{READWRITE}{D}{0}{10}{sec}{The time constant of the depression of the dynamic synapse}
+\objfield{READWRITE}{F}{0}{10}{sec}{The time constant of the facilitation of the dynamic synapse}
+\objfieldnu{READWRITE}{u0}{0}{1}{}{Value of the time varying facilitation state variable $u$  for the first spike}
+\objfieldnu{READWRITE}{r0}{0}{1}{}{Value of the time varying depression state variable $r$ for the first spike}
+\objfieldnu{READONLY}{u}{0}{1}{}{The time varying state variable $u$ for facilitation}
+\objfieldnu{READONLY}{r}{0}{1}{}{The time varying state variable $u$ for depression}
+\objfield{READWRITE}{tau}{0}{100}{sec}{The synaptic time constant $\tau$}
+\objfieldnu{READWRITE}{W}{-1e30}{1e30}{}{The weight (scaling factor, strenght, maximal amplitude) of the synapse}
+\objfield{READWRITE}{delay}{0}{1}{sec}{The synaptic transmission delay}
+\objfieldnu{READONLY}{psr}{-1e30}{1e30}{}{The psr (postsynaptic response) is the result of whatever computation is going on in a synapse.}
+\objfieldnu{READONLY}{steps2cutoff}{-1e30}{1e30}{}{}

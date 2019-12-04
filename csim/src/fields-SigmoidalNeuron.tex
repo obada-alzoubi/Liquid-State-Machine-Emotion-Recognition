@@ -1,0 +1,13 @@
+\objfield{READWRITE}{thresh}{-1e30}{1e30}{W}{Itot = logsig(beta*(Itot-thresh))}
+\objfield{READWRITE}{beta}{-1e30}{1e30}{1}{Itot = logsig(beta*(Itot-thresh))}
+\objfieldnu{READWRITE}{tau\_m}{-1e30}{1e30}{}{time constant}
+\objfield{READWRITE}{A\_max}{-1e30}{1e30}{1}{the output of a sig neuron is scaled to (0,W\_max)}
+\objfield{READWRITE}{I\_inject}{-1e30}{1e30}{W}{external current injected into neuron}
+\objfield{READWRITE}{Vm\_init}{-1e30}{1e30}{V}{initial 'membrane voltage'}
+\objfield{READONLY}{Vm}{-1e30}{1e30}{V}{The current output (potential) of this neuron}
+\objfield{READWRITE}{Vresting}{-1}{1}{V}{The resting membrane voltage.}
+\objfield{READWRITE}{Inoise}{-1e30}{1e30}{A^2}{The noise of analog neurons}
+\objfieldnu{READWRITE}{type}{-1e30}{1e30}{}{Type (e.g. inhibitory or excitatory) of the neuron}
+\objfieldnu{READONLY}{VmOut}{-1e30}{1e30}{}{The vlaue wich will actualle be propagated to the outgoing synapses.}
+\objfieldnu{READONLY}{nIncoming}{-1e30}{1e30}{}{Number of incoming synapses}
+\objfieldnu{READONLY}{nOutgoing}{-1e30}{1e30}{}{Number of outgoing synapses}

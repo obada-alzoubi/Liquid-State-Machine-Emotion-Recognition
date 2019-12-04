@@ -1,0 +1,33 @@
+\objfieldnu{READWRITE}{U}{1e-5}{1}{}{The use parameter of the dynamic synapse}
+\objfield{READWRITE}{D}{0}{10}{sec}{The time constant of the depression of the dynamic synapse}
+\objfield{READWRITE}{F}{0}{10}{sec}{The time constant of the facilitation of the dynamic synapse}
+\objfieldnu{READWRITE}{u0}{0}{1}{}{Value of the time varying facilitation state variable $u$  for the first spike}
+\objfieldnu{READWRITE}{r0}{0}{1}{}{Value of the time varying depression state variable $r$ for the first spike}
+\objfieldnu{READONLY}{u}{0}{1}{}{The time varying state variable $u$ for facilitation}
+\objfieldnu{READONLY}{r}{0}{1}{}{The time varying state variable $u$ for depression}
+\objfield{READWRITE}{tau\_nmda}{0}{100}{sec}{The NMDA time constant $\tau_{nmda}$}
+\objfield{READWRITE}{Mg\_conc}{-1e30}{1e30}{mMol}{Mg-concentration for voltage-dependence of NMDA-channel in}
+\objfield{READWRITE}{E\_nmda}{-1e30}{1e30}{V}{Reversal Potential for NMDA-Receptors}
+\objfield{READWRITE}{E\_ampa}{-1e30}{1e30}{V}{Reversal Potential for AMPA-Receptors}
+\objfieldnu{READWRITE}{fact\_nmda}{-1e30}{1e30}{}{The impact of NMDA-type channels is a fraction of the impact of the normal (AMPA) channels. This variable is multiplied to the weight to get the NMDA-impact.}
+\objfieldnu{READWRITE}{fact\_ampa}{-1e30}{1e30}{}{The impact of NMDA-type channels is a fraction of the impact of the normal (AMPA) channels. This variable is multiplied to the weight to get the AMPA-impact.}
+\objfieldnu{READONLY}{psr\_nmda}{-1e30}{1e30}{}{The psr (postsynaptic response) for nmda channels.}
+\objfield{READWRITE}{back\_delay}{-1e30}{1e30}{sec}{Delay of dendritic backpropagating spike (the synapse sees the postsynaptic spike delayed by back\_delay}
+\objfieldnu{READWRITE}{tauspost}{-1e30}{1e30}{}{Used for extended rule by Froemke and Dan. See Froemke and Dan (2002). Spike-timing-dependent synaptic modification induced by natural spike trains. Nature 416 (3/2002).}
+\objfieldnu{READWRITE}{tauspre}{-1e30}{1e30}{}{Used for extended rule by Froemke and Dan.}
+\objfieldnu{READWRITE}{taupos}{-1e30}{1e30}{}{Timeconstant of exponential decay of positive learning window for STDP.}
+\objfieldnu{READWRITE}{tauneg}{-1e30}{1e30}{}{Timeconstant of exponential decay of negative learning window for STDP.}
+\objfieldnu{READWRITE}{dw}{-1e30}{1e30}{}{}
+\objfieldnu{READWRITE}{STDPgap}{-1e30}{1e30}{}{No learning is performed if $|Delta| = |t_{post}-t_{pre}| < STDPgap$.}
+\objfieldnu{READWRITE}{activeSTDP}{-1e30}{1e30}{}{Set to 1 to activate STDP-learning. No learning is performed if set to 0.}
+\objfieldnu{READWRITE}{useFroemkeDanSTDP}{-1e30}{1e30}{}{activate extended rule by Froemke and Dan (default=1)}
+\objfieldnu{READWRITE}{Wex}{-1e30}{1e30}{}{The maximal/minimal weight of the synapse}
+\objfieldnu{READWRITE}{Aneg}{-1e30}{1e30}{}{Defines the peak of the negative exponential learning window.}
+\objfieldnu{READWRITE}{Apos}{-1e30}{1e30}{}{Defines the peak of the positive exponential learning window.}
+\objfieldnu{READWRITE}{mupos}{-1e30}{1e30}{}{Extended multiplicative positive update: $dw = (Wex-W)^{mupos} * Apos * exp(-Delta/taupos)$. Set to 0 for basic update. See Guetig, Aharonov, Rotter and Sompolinsky (2003). Learning input correlations through non-linear asymmetric Hebbian plasticity. Journal of Neuroscience 23. pp.3697-3714.}
+\objfieldnu{READWRITE}{muneg}{-1e30}{1e30}{}{Extended multiplicative negative update: $dw = W^{mupos} * Aneg * exp(Delta/tauneg)$. Set to 0 for basic update.}
+\objfield{READWRITE}{tau}{0}{100}{sec}{The synaptic time constant $\tau$}
+\objfieldnu{READWRITE}{W}{-1e30}{1e30}{}{The weight (scaling factor, strenght, maximal amplitude) of the synapse}
+\objfield{READWRITE}{delay}{0}{1}{sec}{The synaptic transmission delay}
+\objfieldnu{READONLY}{psr}{-1e30}{1e30}{}{The psr (postsynaptic response) is the result of whatever computation is going on in a synapse.}
+\objfieldnu{READONLY}{steps2cutoff}{-1e30}{1e30}{}{}

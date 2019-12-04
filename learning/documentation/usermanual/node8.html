@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Implementation with Learning-Tool </TITLE>
+<META NAME="description" CONTENT="Implementation with Learning-Tool ">
+<META NAME="keywords" CONTENT="usermanual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="usermanual.css">
+
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_top_navigation">
+<tr valign=middle class="csim_top_navigation">
+<td valign=middle  align=left class="csim_top_navigation"><i><b>&nbsp;Learning-Tool User Manual</b></i></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html112"
+  HREF="node7.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html118"
+  HREF="node1.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="contents" SRC="contents.gif"></A></td>
+<td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html120"
+  HREF="node9.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00033000000000000000"></A><A NAME="subsec:implement"></A>
+
+Implementation with <SPAN  CLASS="textsf">Learning-Tool</SPAN> 
+</H2>
+
+<P>
+The full Matlab code is contained in
+<TT>lsm/learning/demos/spike_train_classification/spike_class.m</TT>.
+
+<P>
+
+<H3><A NAME="SECTION00033100000000000000">
+Defining the input distribution</A>
+</H3>
+
+<P>
+Several input distributions are readly imlemented as Matlab objects.
+The class <A HREF="#sec:jitteredtemplates"><TT>jittered_templates</TT></A>
+provides the kind of input we need for our task. The followin code
+line generates a <TT>jittered_templates</TT> object which produces
+single spike trains from 2 patterns with a jitter of 4ms:
+
+<P>
+<PRE>
+   InputDist = jittered_templates('nChannels',1,'nTemplates',2,...
+                                  'Tstim',0.5,'jitter',4e-3);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION00033200000000000000">
+Creating the neural microcircuit model</A>
+</H3>
+
+<P>
+The following code generates a sparsely connected network of
+leaky-integrate-and-fire neurons. The details of the network creation
+are the topic of the
+<A NAME="tex2html14"
+  HREF="http://www.lsm.tugraz.at/circuits/usermanual">Circuit-Tool User
+  Manual</A>
+and thus not described here.
+
+<P>
+<PRE>
+   % init the model
+   nmc = neural_microcircuit;
+
+   % add a pool of 135 leaky-integrate-and-fire neurons
+   [nmc,p1]  = add(nmc,'Pool','origin',[1 1 1],'size',[3 3 15]);
+   [nmc,pin] = add(nmc,'Pool','origin',[0 0 0],'size',[1 1 1],...
+                   'type','SpikingInputNeuron','frac_EXC',1);
+
+   % connect the input to the pools/pools
+   nmc = add(nmc,'Conn','dest',p1,'src',pin,'Cscale',0.9,...
+             'type','StaticSpikingSynapse','rescale',0,'Wscale',0.15,'lambda',Inf);
+
+   % add recurrent connections within the pools
+   nmc = add(nmc,'Conn','dest',p1,'src',p1,'lambda',2);
+
+   % define the respones (i.e. what to record)
+   nmc = record(nmc,'Pool',p1,'Field','spikes');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION00033300000000000000">
+Creating the Training and Test inputs</A>
+</H3>
+
+<P>
+Since we have defined the circuit model and the input distribution we
+can now simulate the circuit with inuts drawn from this distribution
+an collect a training and test set. After the simulations the spike
+responses are lowpass fitered and the states are samples every 25ms.
+
+<P>
+<PRE>
+   % collect stimulus/response pairs for training
+   [train_response,train_stimuli] = collect_sr_data(nmc,InputDist,500);
+
+   % apply low-pass filter to spikes
+   train_states  = response2states(train_response,[],[0:0.025:Tmax]); 
+
+   % collect stimulus/response pairs for testing
+   [test_response,test_stimuli] = collect_sr_data(nmc,InputDist,200);
+
+   % apply low-pass filter to spikes
+   test_states = response2states(test_response,[],[0:0.025:Tmax]);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION00033400000000000000">
+Setting up to train the threshold gate</A>
+</H3>
+
+<P>
+Everything which has to do with the training of a readout is
+encapsulated in the class
+<A HREF="#sec:externalreadout"><TT>external_readout</TT></A>. This object
+allows you to specify the target function (target filter) and the
+training algorithm (and several options for preprocessing). In our
+example we use pseudo invers methode (implemented in the class
+<A HREF="#sec:linearclassification"><TT>linear_classification</TT></A> to
+determine the parameters of the threshold gate. The target function
+which outputs 0 (1) for all sample times (see
+<A HREF="node5.html#sec:getstarted">definition of the task</A>) is implemented in the
+class
+<A HREF="#sec:segmentclassification"><TT>segment_classification</TT></A>.
+Hence the code for setting up to train the threshold gate is rather
+short:
+
+<P>
+<PRE>
+   readout{1} = external_readout(...
+      'description','with linear classification',...
+      'targetFunction',segment_classification,...
+      'algorithm',linear_classification);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION00033500000000000000">
+Do the training of the threshold gate</A>
+</H3>
+
+<P>
+After everyting is set up properly we just need to start the training.
+Note that in the code below the function
+<A HREF="#sec:trainreadouts">function <TT>train_readouts</TT></A> also
+measures the performance on the tes set.
+
+<P>
+<PRE>
+   [trained_readouts, perf_train, perf_test] = train_readouts(...
+                                readout,...
+                                train_states,train_stimuli,...
+                                test_states,test_stimuli);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION00033600000000000000">
+Evaluation of the performance</A>
+</H3>
+
+<P>
+After training we want to see how the network performs on indinivual
+test inputs:
+
+<P>
+<PRE>
+   plot_readouts(trained_readouts,test_states,test_stimuli);
+</PRE>
+
+<P>
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_bot_navigation">
+<tr valign=middle class="csim_bot_navigation">
+<td valign=middle width=20 class="csim_bot_navigation">
+<A NAME="tex2html112"
+  HREF="node7.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle class="csim_bot_navigation"><A NAME="tex2html113"
+  HREF="node7.html">Basic Concepts</A></td>
+<td class="csim_bot_navigation">&nbsp;</td>
+<td align=right valign=middle class="csim_bot_navigation"><A NAME="tex2html121"
+  HREF="node9.html">Function reference</A></td><td  align=right width=20 valign=middle class="csim_bot_navigation">
+<A NAME="tex2html120"
+  HREF="node9.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

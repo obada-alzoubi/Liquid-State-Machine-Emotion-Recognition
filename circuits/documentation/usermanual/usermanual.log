@@ -1,0 +1,381 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2005.9.13)  11 JUN 2006 19:05
+entering extended mode
+**usermanual.tex
+(./usermanual.tex
+LaTeX2e <2003/12/01>
+Babel <v3.8d> and hyphenation patterns for american, french, german, ngerman, b
+ahasa, basque, bulgarian, catalan, croatian, czech, danish, dutch, esperanto, e
+stonian, finnish, greek, icelandic, irish, italian, latin, magyar, norsk, polis
+h, portuges, romanian, russian, serbian, slovak, slovene, spanish, swedish, tur
+kish, ukrainian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.cfg
+File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/graphics/color.cfg
+File: color.cfg 2005/02/03 v1.3 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 125.
+)
+(/usr/share/texmf/tex/latex/html/html.sty
+(/usr/share/texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2003/11/30 v6.74m Hypertext links for LaTeX
+\@linkdim=\dimen105
+\Hy@linkcounter=\count88
+\Hy@pagecounter=\count89
+
+(/usr/share/texmf/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2003/11/30 v6.74m Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf/tex/latex/hyperref/hyperref.cfg
+File: hyperref.cfg 2005/03/07 hyperref configuration of teTeX 3.0
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 1830.
+Package hyperref Info: Hyper figures OFF on input line 1880.
+Package hyperref Info: Link nesting OFF on input line 1885.
+Package hyperref Info: Hyper index ON on input line 1888.
+Package hyperref Info: Plain pages ON on input line 1893.
+Package hyperref Info: Backreferencing OFF on input line 1900.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2004.
+(/usr/share/texmf/tex/latex/html/url.sty
+Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
+ names
+)
+LaTeX Info: Redefining \url on input line 2143.
+\Fld@menulength=\count90
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+\Choice@toks=\toks15
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 2618.
+Package hyperref Info: Link nesting OFF on input line 2623.
+Package hyperref Info: Hyper index ON on input line 2626.
+Package hyperref Info: backreferencing OFF on input line 2633.
+Package hyperref Info: Link coloring ON on input line 2636.
+\c@Item=\count91
+\c@Hfootnote=\count92
+)
+*hyperref using driver hpdftex*
+(/usr/share/texmf/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2003/11/30 v6.74m Hyperref driver for pdfTeX
+
+(/usr/share/texmf/tex/latex/psnfss/pifont.sty
+Package: pifont 2004/09/15 PSNFSS-v9.2 Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/usr/share/texmf/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/usr/share/texmf/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\Fld@listcount=\count93
+\@outlinefile=\write3
+)
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count94
+\c@lchapter=\count95
+\c@chapter=\count96
+\c@lsection=\count97
+\c@lsubsection=\count98
+\c@lsubsubsection=\count99
+\c@lparagraph=\count100
+\c@lsubparagraph=\count101
+\c@lsubsubparagraph=\count102
+\ptrfile=\write4
+)
+(/usr/share/texmf/tex/latex/a4wide/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)) (./usermanual.aux)
+\openout1 = `usermanual.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Miscellaneous (2004.10.26)
+\protectiondepth=\count103
+\scratchcounter=\count104
+\scratchtoks=\toks17
+\scratchdimen=\dimen108
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write5
+\zeropoint=\dimen109
+\onepoint=\dimen110
+\onebasepoint=\dimen111
+\minusone=\count105
+\thousandpoint=\dimen112
+\onerealpoint=\dimen113
+\emptytoks=\toks18
+\nextbox=\box27
+\nextdepth=\dimen114
+\everyline=\toks19
+\!!counta=\count106
+\!!countb=\count107
+\recursecounter=\count108
+)
+loading : Context Support Macros / PDF (2004.03.26)
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen115
+\MPnumerator=\count112
+\everyMPtoPDFconversion=\toks20
+)
+Package hyperref Info: Link coloring ON on input line 62.
+ (/usr/share/texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2003/12/03 v2.21 Cross-referencing by name of section
+\c@section@level=\count113
+)
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+ (./usermanual.out)
+(./usermanual.out)
+\openout3 = `usermanual.out'.
+
+ (./um-tp-paper.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 14.
+
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <14.4> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 15.
+Missing character: There is no © in font cmr8!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 49.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 49.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 49.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./usermanual.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 2.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 22.
+)
+\tf@toc=\write6
+\openout6 = `usermanual.toc'.
+
+ (./prelim.tex (./about.tex) [2
+
+]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
+)
+(./tutorial.tex
+Underfull \hbox (badness 10000) in paragraph at lines 15--22
+\OT1/cmr/m/n/10.95 The \OT1/cmss/m/n/10.95 Circuit-Tool \OT1/cmr/m/n/10.95 -imp
+lementation of this model em-ploys the Mat-lab class
+ []
+
+[3]
+
+LaTeX Warning: Reference `p_lif' on page 4 undefined on input line 52.
+
+<p_lif.pdf, id=177, 233.87375pt x 392.46625pt>
+File: p_lif.pdf Graphic file (type pdf)
+ <use p_lif.pdf>
+
+LaTeX Warning: Reference `p_lif' on page 4 undefined on input line 57.
+
+
+Overfull \hbox (17.24127pt too wide) in paragraph at lines 75--75
+[]                       \OT1/cmtt/m/n/10.95 'Neuron.A_max',4,'Neuron.I_inject'
+,1,'Neuron.Vm_init',0);[] 
+ []
+
+[4 <./p_lif.pdf>]
+
+LaTeX Warning: Reference `p123' on page 5 undefined on input line 98.
+
+<p123.pdf, id=202, 532.99126pt x 343.2825pt>
+File: p123.pdf Graphic file (type pdf)
+ <use p123.pdf> [5 <./p123.pdf>]
+
+LaTeX Warning: Reference `in_conn' on page 6 undefined on input line 135.
+
+<in_conn.pdf, id=224, 487.8225pt x 306.14375pt>
+File: in_conn.pdf Graphic file (type pdf)
+ <use in_conn.pdf>
+
+LaTeX Warning: Reference `StaticSpikingSynapses' on page 6 undefined on input l
+ine 142.
+
+
+LaTeX Warning: Reference `DynamicSpikingSynapses' on page 6 undefined on input 
+line 143.
+
+
+LaTeX Warning: Reference `in_sig' on page 6 undefined on input line 151.
+
+<in_sig.pdf, id=225, 502.87875pt x 279.0425pt>
+File: in_sig.pdf Graphic file (type pdf)
+ <use in_sig.pdf> [6 <./in_conn.pdf>]
+
+LaTeX Warning: Reference `lif_incoming' on page 7 undefined on input line 190.
+
+<lif_incoming.pdf, id=254, 481.8pt x 337.26pt>
+File: lif_incoming.pdf Graphic file (type pdf)
+ <use lif_incoming.pdf> [7 <./in_sig.pdf>] [8 <./lif_incoming.pdf>]
+
+LaTeX Warning: Reference `tut_stim' on page 9 undefined on input line 256.
+
+<tut_stim.pdf, id=297, 486.81876pt x 401.5pt>
+File: tut_stim.pdf Graphic file (type pdf)
+ <use tut_stim.pdf> [9 <./tut_stim.pdf>]
+
+LaTeX Warning: Reference `tut_resp' on page 10 undefined on input line 292.
+
+<tut_resp.pdf, id=317, 469.755pt x 401.5pt>
+File: tut_resp.pdf Graphic file (type pdf)
+ <use tut_resp.pdf>)
+(./input_output.tex
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+[]\OT1/cmtt/m/n/10.95 S.channel(i).data \OT1/cmr/m/n/10.95 : sig-nal date: vek-
+tor of the ana-log val-ues
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 35.
+
+LaTeX Font Info:    No file OMScmtt.fd. on input line 35.
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 35.
+
+[10 <./tut_resp.pdf>]) (./input_dist.tex) (./distributed.tex)
+(./neural_microcircuit.tex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+) (./delay_lines.tex) (./small_circuits.tex)
+(./usermanual.bbl) [11] (./usermanual.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3127 strings out of 94499
+ 41600 string characters out of 1172810
+ 93341 words of memory out of 3500000
+ 6148 multiletter control sequences out of 10000+50000
+ 12379 words of font info for 44 fonts, out of 500000 for 2000
+ 580 hyphenation exceptions out of 1000
+ 34i,7n,38p,273b,268s stack positions out of 1500i,500n,5000p,200000b,5000s
+PDF statistics:
+ 345 PDF objects out of 300000
+ 87 named destinations out of 131072
+ 196 words of extra memory for PDF output out of 65536
+
+! pdfTeX warning (dest): name{tut_resp} has been referenced but does not exist,
+ replaced by a fixed one
+
+! pdfTeX warning (dest): name{tut_stim} has been referenced but does not exist,
+ replaced by a fixed one
+
+! pdfTeX warning (dest): name{lif_incoming} has been referenced but does not ex
+ist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{in_sig} has been referenced but does not exist, r
+eplaced by a fixed one
+
+! pdfTeX warning (dest): name{DynamicSpikingSynapses} has been referenced but d
+oes not exist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{StaticSpikingSynapses} has been referenced but do
+es not exist, replaced by a fixed one
+
+! pdfTeX warning (dest): name{in_conn} has been referenced but does not exist, 
+replaced by a fixed one
+
+! pdfTeX warning (dest): name{p123} has been referenced but does not exist, rep
+laced by a fixed one
+
+! pdfTeX warning (dest): name{p_lif} has been referenced but does not exist, re
+placed by a fixed one
+
+</usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmtt10.pfb></
+usr/share/texmf/fonts/type1/bluesky/cm/cmss10.pfb></usr/share/texmf/fonts/type1
+/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr
+/share/texmf/fonts/type1/bluesky/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/blu
+esky/cm/cmss8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share
+/texmf/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/bluesky/
+cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/te
+xmf/fonts/type1/bluesky/cm/cmbxti10.pfb></usr/share/texmf/fonts/type1/bluesky/c
+m/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmssbx10.pfb>
+Output written on usermanual.pdf (11 pages, 513492 bytes).

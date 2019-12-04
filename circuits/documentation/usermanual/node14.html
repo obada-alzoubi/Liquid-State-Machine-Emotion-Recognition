@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The response or the network output</TITLE>
+<META NAME="description" CONTENT="The response or the network output">
+<META NAME="keywords" CONTENT="usermanual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="usermanual.css">
+
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node12.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_top_navigation">
+<tr valign=middle class="csim_top_navigation">
+<td valign=middle align=left  class="csim_top_navigation"><i><b>&nbsp;Circuit-Tool User Manual</b></i></td><td valign=middle align=right class="csim_top_navigation">&nbsp;
+<A NAME="tex2html217"
+  HREF="node13.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A>&nbsp;
+<A NAME="tex2html223"
+  HREF="node1.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="contents" SRC="contents.gif"></A>&nbsp;
+<A NAME="tex2html225"
+  HREF="node15.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></dt></tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00042000000000000000"></A><A NAME="sec:output"></A>
+
+The response or the network output
+</H2>
+
+<P>
+After a network simulation via a command like
+<PRE><TT>
+&nbsp;&nbsp;&nbsp;&nbsp;<TT>&#187; R=simulate(nmc,Tstim,S);</TT>
+</TT></PRE>
+
+<P>
+the <SPAN  CLASS="textit">response</SPAN> is stored in the cell array <TT>R</TT>. <TT>R{i}</TT>
+contains the traces specified by the <SPAN CLASS="MATH"><I>i</I></SPAN>-th <TT>nmc =
+  record(nmc,...)</TT> statement during the setup of the simulation.
+
+<P>
+<TT>R{i}</TT> by itself is a struct array with the only field
+<TT>channel</TT> which is in turn a struct array with a similar
+structure as an <A HREF="node13.html#sec:inputs">input signal</A>. That is
+
+<P>
+
+<UL>
+<LI><TT>R{i}.channel(j).data</TT> : signal data : vektor of the
+  analog values or spike times. Note that the data always starts at
+  time <SPAN CLASS="MATH"><I>t</I>=0</SPAN>.
+
+<P>
+</LI>
+<LI><TT>R{i}.channel(j).spiking</TT> : binary flag (0/1) which
+  determines if <TT>data</TT> should be interpreted as spike times or
+  as an analog signal
+
+<P>
+</LI>
+<LI><TT>R{i}.channel(j).dt</TT> : time discretization; for analog
+  signals   only
+
+<P>
+</LI>
+<LI><TT>R{i}.channel(j).fieldName</TT> : name of the recorded
+    field
+
+<P>
+</LI>
+<LI><TT>R{i}.channel(j).idx</TT> : handle of the object from which
+  field the data was recorded
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_bot_navigation">
+<tr valign=middle class="csim_bot_navigation">
+<td valign=middle align=left width=1% class="csim_bot_navigation">
+<A NAME="tex2html217"
+  HREF="node13.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle align=left class="csim_bot_navigation">&nbsp;<A NAME="tex2html218"
+  HREF="node13.html">The Stimuls or Input Signals</A></td>
+<td align=right valign=middle class="csim_bot_navigation"><A NAME="tex2html226"
+  HREF="node15.html">Input Distributions</A>&nbsp;
+<A NAME="tex2html225"
+  HREF="node15.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

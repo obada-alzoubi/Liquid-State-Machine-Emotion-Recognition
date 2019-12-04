@@ -1,0 +1,22 @@
+\objfield{READWRITE}{Cm}{0}{1}{F}{The membrane capacity $C_m$}
+\objfield{READWRITE}{Rm}{0}{1e30}{Ohm}{The membrane resistance $R_m$}
+\objfield{READWRITE}{Vthresh}{-10}{100}{V}{If $V_m$ exceeds $V_{thresh}$ a spike is emmited.}
+\objfield{READWRITE}{Vresting}{-1}{1}{V}{The resting membrane voltage.}
+\objfield{READWRITE}{Vreset}{-1}{1}{V}{The voltage to reset $V_m$ to after a spike.}
+\objfield{READWRITE}{Vinit}{-1}{1}{V}{The initial condition for $V_m$ at time $t=0$.}
+\objfield{READWRITE}{Trefract}{0}{1}{sec}{The length of the absolute refractory period.}
+\objfield{READWRITE}{Inoise}{0}{1}{A}{The standard deviation of the noise to be added each integration time constant.}
+\objfield{READWRITE}{Iinject}{-1}{1}{A}{A constant current to be injected into the LIF neuron.}
+\objfieldnu{READWRITE}{a}{-1e30}{1e30}{}{A constant (0.02, 01) describing the coupling of variable u to Vm;.}
+\objfieldnu{READWRITE}{b}{-1e30}{1e30}{}{A constant controlling sensitivity og u.}
+\objfieldnu{READWRITE}{c}{-1e30}{1e30}{}{A constant controlling reset of Vm (1000*Vreset).}
+\objfieldnu{READWRITE}{d}{-1e30}{1e30}{}{A constant controlling reset of u.}
+\objfieldnu{READWRITE}{type}{-1e30}{1e30}{}{Type (e.g. inhibitory or excitatory) of the neuron}
+\objfield{READONLY}{Vm}{-1e30}{1e30}{V}{The membrane voltage $V_m$}
+\objfieldnu{READONLY}{Vb}{-1e30}{1e30}{}{The membrane voltage in millivolt.}
+\objfieldnu{READONLY}{Vint}{-1e30}{1e30}{}{The membrane voltage in millivolt.}
+\objfieldnu{READONLY}{u}{-1e30}{1e30}{}{internal variable}
+\objfieldnu{READONLY}{ub}{-1e30}{1e30}{}{The internal variable u adapted to millivolt and millisecond.}
+\objfieldnu{READONLY}{Isyn}{-1e30}{1e30}{}{synaptic input current}
+\objfieldnu{READONLY}{nIncoming}{-1e30}{1e30}{}{Number of incoming synapses}
+\objfieldnu{READONLY}{nOutgoing}{-1e30}{1e30}{}{Number of outgoing synapses}

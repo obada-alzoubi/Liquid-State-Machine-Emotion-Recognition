@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Algorithm for offline training of the threshold gate</TITLE>
+<META NAME="description" CONTENT="Algorithm for offline training of the threshold gate">
+<META NAME="keywords" CONTENT="usermanual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="usermanual.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_top_navigation">
+<tr valign=middle class="csim_top_navigation">
+<td valign=middle  align=left class="csim_top_navigation"><i><b>&nbsp;Learning-Tool User Manual</b></i></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html88"
+  HREF="node5.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html96"
+  HREF="node1.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="contents" SRC="contents.gif"></A></td>
+<td valign=middle width=20 align=center class="csim_top_navigation">
+<A NAME="tex2html98"
+  HREF="node7.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000"></A><A NAME="subsec:offline"></A>
+
+Algorithm for offline training of the threshold gate
+</H2>
+
+<P>
+Here we just outline the main body of the procedure which we will use
+to train the readout. This will be discussed in more detail in
+<A HREF="#sec:lsm">Section</A>&nbsp;<A HREF="#sec:lsm"><IMG  ALIGN="absmiddle" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>.
+
+<P>
+
+<OL>
+<LI>Define the neural microcircuit to be analyzed
+
+<P>
+</LI>
+<LI>Record <SPAN  CLASS="textit">spike responses</SPAN> of the <SPAN  CLASS="textit">neural microcircuit</SPAN>
+  caused by different <SPAN  CLASS="textit">training inputs</SPAN> drawn from an appropriate
+  <SPAN  CLASS="textit">input distribution</SPAN>.
+
+<P>
+</LI>
+<LI>Convert the spike responses into <SPAN  CLASS="textit">states <SPAN CLASS="MATH"><I>x</I>(<I>t</I><SUB><I>k</I></SUB>)</SPAN></SPAN> at
+  various <SPAN  CLASS="textit">sample time points <SPAN CLASS="MATH"><I>t</I><SUB><I>k</I></SUB></SPAN></SPAN> by some low-pass filtering
+  to get a somewhat smoothed signal.  This mimics the effect of spike
+  transmission through a synapse to its postsynaptic neuron. This
+  transformation can also be dropped if one can cope directly with the
+  spike response.
+
+<P>
+</LI>
+<LI>Apply a <SPAN  CLASS="textit">supervised learning algorithm</SPAN> to a set of
+  training examples of the form <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\left&lt;\right.$"></SPAN>state
+  <SPAN CLASS="MATH"><I>x</I></SPAN>,&nbsp;target-value&nbsp;<!-- MATH
+ $\left.y\right>$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\left.y\right&gt;$"></SPAN> to train a <SPAN  CLASS="textit">readout function
+    <SPAN CLASS="MATH"><I>f</I></SPAN></SPAN> (a threshold gate in the case of this example) such that the
+  actual outputs <SPAN CLASS="MATH"><I>f</I>(<I>x</I>)</SPAN> are as close as possible to the target values
+  <SPAN CLASS="MATH"><I>y</I></SPAN> given by the <SPAN  CLASS="textit">target function</SPAN>.
+
+<P>
+</LI>
+<LI>Evaluate the performance of the trained readout (i.e. the
+  threshold gate) on an independent <SPAN  CLASS="textit">set of test inputs</SPAN> (which
+  are usually drawn from the same distribution as the training
+  inputs).
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<DIV CLASS="navigation"><table border=0 cellspacing=0 callpadding=0 width=100% class="csim_bot_navigation">
+<tr valign=middle class="csim_bot_navigation">
+<td valign=middle width=20 class="csim_bot_navigation">
+<A NAME="tex2html88"
+  HREF="node5.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="previous" SRC="prev.gif"></A></td><td valign=middle class="csim_bot_navigation"><A NAME="tex2html89"
+  HREF="node5.html">An Introductory example</A></td>
+<td class="csim_bot_navigation">&nbsp;</td>
+<td align=right valign=middle class="csim_bot_navigation"><A NAME="tex2html99"
+  HREF="node7.html">Basic Concepts</A></td><td  align=right width=20 valign=middle class="csim_bot_navigation">
+<A NAME="tex2html98"
+  HREF="node7.html">
+<IMG  ALIGN="absmiddle" BORDER="0" ALT="next" SRC="next.gif"></A></td>
+</tr></table>
+</DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>
